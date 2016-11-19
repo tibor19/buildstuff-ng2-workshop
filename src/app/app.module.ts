@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 import { WeeklyMenuComponent } from './weekly-menu/weekly-menu.component';
 import { HomeComponent } from './home/home.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { ImagePipe } from './pipes/image.pipe';
+import { RecipeService } from './services/recipe.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeeklyMenuComponent,
     HomeComponent,
-    RecipeComponent
+    RecipeComponent,
+    ImagePipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { RecipeComponent } from './recipe/recipe.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
