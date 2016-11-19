@@ -9,6 +9,7 @@ import { RecipeService } from '../services/recipe.service';
 export class WeeklyMenuComponent implements OnInit {
 
   recipes;
+  errorMessage;
 
 
   constructor(private recipeSvc: RecipeService) { }
@@ -19,7 +20,8 @@ export class WeeklyMenuComponent implements OnInit {
       (result) => this.recipes = result.slice(0, 7).map((r, index) => {
           (<any>r).weekDay = weekDays[index % weekDays.length];
           return r;
-        }));
+        }),
+        error => this.errorMessage = error);
   }
 
 }

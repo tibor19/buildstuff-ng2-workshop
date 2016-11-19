@@ -1,6 +1,9 @@
   <article>
 
     <h2>Weekly Menu</h2>
+    <div *ngIf='errorMessage'>
+      {{errorMessage}}
+    </div>
 
     <div class="box" *ngFor='let recipe of recipes; let odd = odd'>
       <a href="/recipe/{{recipe.recipeId}}">

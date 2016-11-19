@@ -18,11 +18,15 @@ export class RecipeService {
   }
 
   getRecipes() {
-    return this.http.get('/api/recipies.json').map(respose => {
-      if (respose.status === 200) {
-        return respose.json();
-      }
-    });
+    return this.http.get('/api/recipes.json')
+    .map(respose => respose.json())
+    .do(data => console.log(data))
+    .catch(this.errorHandler);
+  }
+
+  errorHandler(error) {
+    console.log(error);
+    return Observable.throw(error.json());
   }
 
 }
