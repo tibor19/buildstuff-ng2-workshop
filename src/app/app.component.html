@@ -1,0 +1,16 @@
+<h1 *ngIf='title'>
+  Title is: {{title}}
+</h1>
+<h2 [innerText]='title'></h2>
+
+<button (click)='onClick()'>Click me</button>
+
+<input type="text" [(ngModel)]='title' />
+
+<ul>
+  <li *ngFor='let name of names; let odd=odd; let first=first; let last=last; let index = index' >
+    {{index}} {{first}} {{last}} {{odd}}<div bind-innerText='name'></div>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
