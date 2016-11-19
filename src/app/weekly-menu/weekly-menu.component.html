@@ -2,10 +2,10 @@
 
     <h2>Weekly Menu</h2>
 
-    <div class="box" *ngFor='let recipe of recipes; let index = index; let odd = odd'>
+    <div class="box" *ngFor='let recipe of recipes; let odd = odd'>
       <a href="/recipe/{{recipe.recipeId}}">
         <div [ngClass]="{'box-content': true, 'float-right': odd, 'float-left': !odd}">
-          <h2>{{weekDays[index%weekDays.length]}}</h2>
+          <h2>{{recipe.weekDay}}</h2>
           <h4>{{recipe.name}}</h4>
         </div>
         <div [ngClass]="{'box-image': true, 'float-left': odd, 'float-right': !odd}">
