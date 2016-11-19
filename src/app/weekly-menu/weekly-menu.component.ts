@@ -15,10 +15,11 @@ export class WeeklyMenuComponent implements OnInit {
 
   ngOnInit() {
     let weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Saunday']
-    this.recipes = this.recipeSvc.getRecipes().slice(0, 7).map((r, index) => {
-      (<any>r).weekDay = weekDays[index % weekDays.length];
-      return r;
-    });
+    this.recipeSvc.getRecipes().subscribe(
+      (result) => this.recipes = result.slice(0, 7).map((r, index) => {
+          (<any>r).weekDay = weekDays[index % weekDays.length];
+          return r;
+        }));
   }
 
 }
