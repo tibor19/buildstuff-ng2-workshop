@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+  import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 import { Http } from '@angular/http';
@@ -18,7 +18,7 @@ export class RecipeService {
   }
 
   getRecipes() {
-    return this.http.get('/api/recipes.json')
+    return this.http.get('/api/recipies.json')
     .map(respose => respose.json())
     .do(data => console.log(data))
     .catch(this.errorHandler);

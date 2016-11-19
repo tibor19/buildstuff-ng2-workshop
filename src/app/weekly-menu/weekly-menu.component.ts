@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
 
 @Component({
-  selector: 'app-weekly-menu',
   templateUrl: './weekly-menu.component.html',
   styleUrls: ['./weekly-menu.component.css']
 })

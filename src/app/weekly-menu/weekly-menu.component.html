@@ -6,7 +6,7 @@
     </div>
 
     <div class="box" *ngFor='let recipe of recipes; let odd = odd'>
-      <a href="/recipe/{{recipe.recipeId}}">
+      <a [routerLink]="['recipe', recipe.recipeId]">
         <div [ngClass]="{'box-content': true, 'float-right': odd, 'float-left': !odd}">
           <h2>{{recipe.weekDay}}</h2>
           <h4>{{recipe.name}}</h4>
